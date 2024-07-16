@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    
+.container {
+    max-width: 1200px;
+    margin: 20px 20px 20px 0px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    line-height: 1.6;
+}
+
+</style>
+    {% for p in post %}
+        <div class="container">
+            <h1 class="post-title">{{ p.title }}</h1>
+            <p class="post-meta">By {{ p.author }} | Created: {{ p.date_created }} | Updated: {{ p.date_updated }}
+            </p>
+            <div class="post-content">
+                {{p.content}}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

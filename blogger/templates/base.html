@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css\base.css' %}">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    {% block link %}
+        
+    {% endblock %}
+</head>
+
+<body style="background: rgb(252,252,253);">
+    <header>
+        <div class="brand">
+            <h1>BlogIndex</h1>
+            <button id="toggle-nav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      {% block content %}
+        
+      {% endblock %}
+    </main>
+</body>
+<script src="{% static 'js/index.js' %}"></script>
+
+</html>
