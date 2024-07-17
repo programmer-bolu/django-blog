@@ -11,6 +11,13 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.container img{
+    width: 100% !important;
+    aspect-ratio: 2;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
 
 .post-title {
     font-size: 2em;
@@ -30,6 +37,9 @@
 </style>
     {% for p in post %}
         <div class="container">
+            {% if p.post_image != 'none.png' %}
+                    <img src="{{ p.post_image.url }}" alt="">
+                {% endif %}
             <h1 class="post-title">{{ p.title }}</h1>
             <p class="post-meta">By {{ p.author }} | Created: {{ p.date_created }} | Updated: {{ p.date_updated }}
             </p>

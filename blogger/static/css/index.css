@@ -20,6 +20,15 @@ main {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid black;
+}
+
+.container img{
+    width: 100% !important;
+    aspect-ratio: 2;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid white;
 }
 
 .post-title {

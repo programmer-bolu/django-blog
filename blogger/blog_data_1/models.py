@@ -17,6 +17,7 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
+    post_image = models.ImageField(default='none.png', blank=True)
 
     def __str__(self):
         return f"Post by {self.author}"

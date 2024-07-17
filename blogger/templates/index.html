@@ -8,6 +8,9 @@
         {% for post in posts %}
         <a href="{% url 'blogpost' id=post.id %}">
             <div class="container">
+                {% if post.post_image != 'none.png' %}
+                    <img src="{{ post.post_image.url }}" alt="">
+                {% endif %}
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-meta">By {{ post.author }} | Created: {{ post.date_created }} | Updated: {{ post.date_updated }}
                 </p>
